@@ -1,0 +1,3017 @@
+@import "my-theme/mermaid.dark.css";
+@import "my-theme/codeblock.dark.css";
+@import "my-theme/sourcemode.dark.css";
+
+:root {
+    --bg-color: #2D333B;
+    --side-bar-bg-color: #22272E;
+    --text-color: #E2E8F0;
+
+    --select-text-bg-color: rgba(56, 189, 248, 0.35);
+
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid rgba(255, 255, 255, 0.1);
+
+    --active-file-bg-color: rgba(56, 189, 248, 0.12);
+    --active-file-border-color: #38BDF8;
+
+    --active-file-text-color: #ffffff;
+    --item-hover-bg-color: rgba(56, 189, 248, 0.1);
+    --item-hover-text-color: #ffffff;
+    --primary-color: #38BDF8;
+
+    --rawblock-edit-panel-bd: #303741;
+
+    --search-select-bg-color: rgba(56, 189, 248, 0.45);
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: #2D333B;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: 1.625rem;
+}
+
+/* #write max-width owned by my-theme document layer */
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    color: #b8bfc6;
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: #333;
+}
+
+/* night's #md-notification border is replaced by the notification row in
+   the chrome section below */
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: #333;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro',  sans-serif;
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lucida Grande", "Corbel", sans-serif;
+    font-weight: normal;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #DEDEDE
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 36px */
+    line-height: 2.75rem;
+    /* 40px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.63rem;
+    /* 24px */
+    line-height: 1.875rem;
+    /* 30px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17rem;
+    /* 18px */
+    line-height: 1.5rem;
+    /* 24px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    /* 16px */
+    line-height: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    color: white;
+}
+
+h5 {
+    font-size: 0.97rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 22px */
+    margin-bottom: 1.5rem;
+    /* 24px */
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    /* 16px */
+    line-height: 1rem;
+    /* 16px */
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: #4a89dc;
+    color: #fff;
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 1.875rem;
+    margin: 0 0 1.875rem 1.875rem;
+    border-left: solid 2px #474d54;
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+code,
+tt,
+var {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror-gutters {
+    background: #333;
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 2px 5px;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: #474d54;
+    /* variable */
+}
+
+h1 {
+    margin-top: 2em;
+}
+
+a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+b,
+th,
+dt,
+strong {
+    color: #DEDEDE;
+    /* variable */
+}
+
+mark {
+    background: #D3D40E;
+}
+
+blockquote {
+    color: #9DA2A6;
+}
+
+table a {
+    color: #DEDEDE;
+    /* variable */
+}
+
+th,
+td {
+    border: solid 1px #474d54;
+    /* variable */
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #b8bfc6;
+    background-color: var(--bg-color);
+    margin-top: -0.4rem;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\221A';
+    /*◘*/
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #DEDEDE;
+}
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+}
+
+#typora-quick-open {
+    background-color: #525C65;
+}
+
+#typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: #4D8BDB;
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: rgba(77, 139, 219, 0.8);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+/* #write pre.md-meta-block styled in my-theme document layer */
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: var(--bg-color);
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+/* night's h3–h6 focus badges are restyled in the headings section below */
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+/* night's #write div.md-toc-tooltip background and its .md-toc .btn hover
+   are restyled in the TOC section below */
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: rgba(50, 54, 59, 0.93);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+/* night's full-bleed .outline-item:hover band is replaced by the pill rows
+   in the sidebar section below */
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: #5a95e3;
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #b8bfc6;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: 0;
+}
+
+.modal-title {
+    font-size: 1.5em;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.md-table-resize-popover {
+    background-color: #333;
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/** UI for electron */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: #42464A;
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+footer {
+    color: inherit;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1,
+.long-btn {
+    color: inherit;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: #2F353A;
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: #4182c4;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: #333333;
+}
+
+#toggle-sourceview-btn:hover {
+    color: #eee;
+    background: #333333;
+}
+
+/* =============================================================================
+   my-theme — document + chrome (single source of truth, no duplicate passes)
+   Based on Typora official night. Fonts: LXGW WenKai Light/Regular/Medium (woff2).
+   ============================================================================= */
+
+/*
+ * Fonts: relative to my-theme.css (share whole package: css + my-theme/).
+ * url first so editor + Typora PDF use the same theme woff2.
+ */
+@font-face {
+    font-family: "LXGW WenKai";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("my-theme/fonts/LXGW_WenKai-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "LXGW WenKai";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("my-theme/fonts/LXGW_WenKai-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "LXGW WenKai";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("my-theme/fonts/LXGW_WenKai-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "LXGW WenKai";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("my-theme/fonts/LXGW_WenKai-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "LXGW WenKai";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("my-theme/fonts/LXGW_WenKai-Medium.woff2") format("woff2");
+}
+
+/* --- design tokens --- */
+:root {
+    --my-font: "LXGW WenKai", "PingFang SC", "PingFang TC",
+        "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
+    /* Code uses the same family as body (文楷); no separate mono stack */
+    --my-mono: var(--my-font);
+    --my-text: #E2E8F0;
+    --my-muted: #CBD5E1;
+    --my-h1: #38BDF8;
+    --my-h2: #34D399;
+    --my-h3: #FBBF24;
+    --my-h4: #FB7185;
+    --my-h5: #A78BFA;
+    --my-h6: #CBD5E1;
+    --my-strong: #FF7BAD;
+    --my-link: #63DCE4;
+    --my-link-hover: #4FB3FF;
+    --my-line: rgba(255, 255, 255, 0.12);
+    --my-soft: rgba(226, 232, 240, 0.06);
+    --my-code-bg: #303741;
+    --my-code-line: rgba(189, 199, 213, 0.12);
+    --my-code-text: #BEBEC6;
+    --my-chrome: #1e242c;
+}
+
+/* --- document shell --- */
+#write {
+    color: var(--my-text);
+    font-family: var(--my-font);
+    /* rem, not px: Typora's font-size preference sets html inline */
+    font-size: 1.125rem;
+    /*
+     * WenKai ships no italic face. `style` lets the engine slant it for
+     * em and code comments; `none` would leave *emphasis* upright.
+     * Bold is never synthesized either way: every weight is declared in
+     * @font-face, so 700 resolves to the Medium file as a real match.
+     */
+    font-synthesis: style;
+    line-height: 1.75;
+    max-width: 64rem;
+    padding-bottom: 6rem;
+}
+
+#write p,
+#write li,
+#write blockquote,
+#write table,
+#write .md-plain,
+#write .md-line {
+    font-family: var(--my-font);
+}
+
+#write *:not(pre):not(code):not(kbd):not(samp):not(tt):not(var):not(.md-fences):not(.md-fences *):not(.CodeMirror):not(.CodeMirror *):not(.ty-table-edit):not(.ty-table-edit *):not(.md-table-resize-popover):not(.md-table-resize-popover *):not(.toolbar-icon):not(.toolbar-icon *):not(.ty-icon):not(.ty-icon *):not(.btn):not(.btn *):not(.md-math-block):not(.md-math-block *):not(.md-inline-math):not(.md-inline-math *):not(.MathJax):not(.MathJax *):not(.md-diagram-panel):not(.md-diagram-panel *):not(svg):not(svg *) {
+    font-family: var(--my-font);
+}
+
+#write p {
+    color: var(--my-text);
+    margin: 0 0 20px;
+}
+
+/* --- headings (Medium real weights; no bottom rules) --- */
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write .md-heading {
+    box-sizing: border-box;
+    clear: both;
+    display: block;
+    font-family: var(--my-font);
+    font-synthesis: style;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+    margin: 30px 0 15px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    padding: 0 5px;
+    /* pre-wrap keeps a Shift+Enter break inside a heading */
+    white-space: pre-wrap;
+    width: auto;
+}
+
+#write > h1:first-child,
+#write > h1:first-child .md-plain,
+#write > .md-heading:first-child,
+#write > .md-heading:first-child .md-plain {
+    color: var(--my-h1);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: 0;
+}
+
+#write h1,
+#write h1 .md-plain,
+#write .md-heading-1,
+#write .md-heading-1 .md-plain {
+    color: var(--my-h1);
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+#write h2,
+#write h2 .md-plain,
+#write .md-heading-2,
+#write .md-heading-2 .md-plain {
+    color: var(--my-h2);
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+#write h3,
+#write h3 .md-plain,
+#write .md-heading-3,
+#write .md-heading-3 .md-plain {
+    color: var(--my-h3);
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+#write h4,
+#write h4 .md-plain,
+#write .md-heading-4,
+#write .md-heading-4 .md-plain {
+    color: var(--my-h4);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+#write h5,
+#write h5 .md-plain,
+#write .md-heading-5,
+#write .md-heading-5 .md-plain {
+    color: var(--my-h5);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#write h6,
+#write h6 .md-plain,
+#write .md-heading-6,
+#write .md-heading-6 .md-plain {
+    color: var(--my-h6);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/*
+ * Typora's level badge ("h3"…) while a heading is focused. It is a Typora
+ * affordance, so it stays. Typora supplies the content; the theme only
+ * restyles night's grey box in the heading's own color, centered on the
+ * first line, clear of the 5px heading padding.
+ */
+#write h3.md-focus:before,
+#write h4.md-focus:before,
+#write h5.md-focus:before,
+#write h6.md-focus:before {
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    color: inherit;
+    font-family: var(--my-font);
+    font-size: 9px;
+    font-weight: 400;
+    left: -1.75rem;
+    letter-spacing: 0;
+    line-height: 1.3;
+    opacity: 0.6;
+    padding: 0 3px;
+    text-decoration: none;
+    top: 0.38em;
+}
+
+/* Inside a list item the marker already sits there (Typora hides these too) */
+#write li > h3.md-focus:first-child:before,
+#write li > h4.md-focus:first-child:before,
+#write li > h5.md-focus:first-child:before,
+#write li > h6.md-focus:first-child:before {
+    opacity: 0;
+}
+
+#write h1 code,
+#write h2 code,
+#write h3 code,
+#write h4 code,
+#write h5 code,
+#write h6 code {
+    color: inherit;
+    font-size: 0.85em;
+    opacity: 0.92;
+}
+
+/* --- inline emphasis --- */
+#write strong,
+#write strong *,
+#write b,
+#write b *,
+#write .md-strong,
+#write .md-strong *,
+.cm-s-inner .cm-strong,
+.cm-s-typora-default .cm-strong {
+    color: var(--my-strong);
+    font-family: var(--my-font);
+    font-synthesis: style;
+    font-weight: 700;
+}
+
+#write em {
+    color: #B7C5D6;
+    font-style: italic;
+}
+
+#write del {
+    color: #94A3B8;
+    font-weight: 400;
+    opacity: 0.9;
+    text-decoration: line-through;
+}
+
+#write mark {
+    background: rgba(251, 191, 36, 0.32);
+    border-radius: 3px;
+    color: #FEF3C7;
+    padding: 0 0.25em;
+}
+
+#write sub,
+#write sup {
+    font-size: 0.75em;
+    line-height: 0;
+}
+
+/* --- links (thin underline; special cases off for PDF) --- */
+#write a {
+    background-color: transparent;
+    background-image: linear-gradient(
+        transparent 0%,
+        transparent calc(100% - 1px),
+        rgba(125, 211, 252, 0.55) calc(100% - 1px),
+        rgba(125, 211, 252, 0.55) 100%
+    );
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 2px;
+    color: var(--my-link);
+    text-decoration: none;
+    transition: color 0.15s ease, background-image 0.15s ease;
+}
+
+#write a:hover {
+    background-image: linear-gradient(
+        transparent 0%,
+        transparent calc(100% - 2px),
+        rgba(79, 179, 255, 0.85) calc(100% - 2px),
+        rgba(79, 179, 255, 0.85) 100%
+    );
+    color: var(--my-link-hover);
+}
+
+#write .md-toc a,
+#write .md-toc-item a,
+#write a.md-toc-inner,
+#write sup.md-footnote,
+#write sup.md-footnote a,
+#write a.md-footnote,
+#write .md-footnote,
+#write .footnotes a,
+#write .md-reverse-footnote-area a,
+#write a.md-print-anchor,
+#write a.md-image {
+    background-image: none !important;
+    background-size: auto;
+    border-radius: 0;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+/* :has() kept in its own rule: an engine without it drops the whole
+   selector list, which would re-underline TOC and footnote links. */
+#write a:has(> img),
+#write a:has(> .md-image) {
+    background-image: none !important;
+    background-size: auto;
+    border-radius: 0;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+#write sup.md-footnote:hover,
+#write sup.md-footnote a:hover,
+#write a.md-footnote:hover,
+#write .footnotes a:hover,
+#write .md-reverse-footnote-area a:hover {
+    background-image: none !important;
+    color: var(--my-link-hover);
+}
+
+#write sup.md-footnote {
+    background-color: transparent;
+    color: var(--my-link);
+    font-size: 0.75em;
+    vertical-align: super;
+}
+
+#write sup.md-footnote a {
+    color: inherit;
+    font-size: inherit;
+}
+
+#write sup.md-footnote a:hover {
+    color: var(--my-link-hover);
+    text-decoration: underline;
+}
+
+/* --- lists --- */
+#write ul,
+#write ol {
+    margin: 0 0 20px;
+    padding-left: 1.45em;
+}
+
+#write ul {
+    list-style: disc;
+}
+
+#write ul ul {
+    list-style: circle;
+    margin-bottom: 0;
+}
+
+#write ul ul ul {
+    list-style: square;
+}
+
+#write ol {
+    list-style: decimal;
+}
+
+#write ul li,
+#write ol li {
+    color: var(--my-text);
+    margin: 0.35em 0;
+    padding-left: 0.15em;
+}
+
+#write ul li::before {
+    content: none;
+    display: none;
+}
+
+#write ul li::marker,
+#write ol li::marker {
+    color: var(--my-h1);
+    font-weight: 400;
+}
+
+#write li > ul,
+#write li > ol {
+    margin: 0.25em 0 0.35em;
+}
+
+/* --- task lists --- */
+#write .task-list {
+    padding-left: 0;
+}
+
+#write .md-task-list-item {
+    list-style: none;
+    padding-left: 1.25rem;
+}
+
+#write .md-task-list-item::before,
+#write .md-task-list-item::marker {
+    content: none;
+    display: none;
+}
+
+#write .md-task-list-item > input,
+.md-task-list-item > input {
+    -webkit-appearance: none;
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    top: auto;
+}
+
+#write .md-task-list-item > input::before {
+    background-color: var(--bg-color);
+    border: 1px solid #7B8490;
+    border-radius: 4px;
+    content: "";
+    display: inline-block;
+    height: 0.875rem;
+    line-height: 0.875rem;
+    text-align: center;
+    vertical-align: middle;
+    width: 0.875rem;
+}
+
+#write .md-task-list-item > input:checked::before,
+#write .md-task-list-item > input[checked]::before {
+    background-color: var(--my-h1);
+    border-color: var(--my-h1);
+    color: #101820;
+    content: "✓";
+    font-size: 0.625rem;
+    font-weight: 700;
+}
+
+#write .md-task-list-item.task-list-done,
+#write .md-task-list-item.task-list-done > p,
+#write li.task-list-done {
+    color: var(--my-muted);
+}
+
+/* --- blockquote --- */
+#write blockquote {
+    background: var(--my-soft);
+    border-left: 4px solid var(--my-h1);
+    border-radius: 0 8px 8px 0;
+    color: var(--my-muted);
+    margin: 1em 0 20px;
+    padding: 0.65em 1.1em;
+}
+
+#write blockquote blockquote {
+    border-left-color: var(--my-h2);
+    margin-left: 0.25em;
+}
+
+#write blockquote p {
+    color: inherit;
+    margin-bottom: 12px;
+}
+
+#write blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- images --- */
+#write img {
+    border: 4px double rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    transition: border-color 0.2s ease-in-out;
+    vertical-align: middle;
+}
+
+#write img:hover {
+    border-color: rgba(180, 194, 210, 0.58);
+}
+
+/* The enclosing p already carries the 20px rhythm; no second margin here */
+#write p > .md-image:only-child {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#write p > img:only-child {
+    display: block;
+    margin: 0 auto;
+}
+
+#write img[width="16"],
+#write img[height="16"],
+#write img[width="20"],
+#write img[height="20"],
+#write img[width="24"],
+#write img[height="24"] {
+    border: none;
+    border-radius: 0;
+    vertical-align: -0.15em;
+}
+
+#write .md-image > .md-meta {
+    background: var(--my-soft);
+    border-radius: 4px;
+    color: var(--my-muted);
+    font-family: var(--my-mono);
+    font-size: 0.8rem;
+    padding: 2px 6px;
+}
+
+#write .md-expand.md-image > .md-meta {
+    color: var(--my-text);
+}
+
+/* --- code --- */
+#write code {
+    background-color: rgba(226, 232, 240, 0.12);
+    border: 1px solid rgba(226, 232, 240, 0.14);
+    border-radius: 5px;
+    color: #7DD3FC;
+    font-family: var(--my-mono);
+    font-size: 0.9rem;
+    padding: 2px 6px;
+    word-wrap: break-word;
+}
+
+#write code:hover {
+    background-color: rgba(226, 232, 240, 0.15);
+    border-color: rgba(226, 232, 240, 0.18);
+}
+
+/* Fence body is not an inline chip. Export HTML puts the listing in code. */
+#write pre.md-fences code,
+.typora-export #write pre.md-fences code,
+.typora-export pre.md-fences code {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+    white-space: inherit;
+    word-wrap: normal;
+}
+
+#write pre.md-fences code:hover,
+.typora-export #write pre.md-fences code:hover,
+.typora-export pre.md-fences code:hover {
+    background: none;
+    border-color: transparent;
+}
+
+#write kbd,
+#write tt,
+#write var,
+#write samp {
+    font-family: var(--my-mono);
+}
+
+#write kbd {
+    background: rgba(226, 232, 240, 0.08);
+    border: 1px solid rgba(226, 232, 240, 0.22);
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    box-shadow: none;
+    color: var(--my-text);
+    font-size: 0.82em;
+    padding: 1px 6px;
+}
+
+#write pre.md-fences {
+    background: var(--my-code-bg);
+    border: 1px solid var(--my-code-line);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0 10px 28px 0;
+    color: var(--my-code-text);
+    font-family: var(--my-mono);
+    font-size: 0.9rem;
+    margin: 1.2rem 0 2.75rem;
+    overflow: visible;
+    padding: 64px 18px 20px 0;
+    position: relative;
+}
+
+#write pre.md-fences::before {
+    background: #EF6A74;
+    border-radius: 50%;
+    box-shadow: 20px 0 #FDBC40, 40px 0 #35CD4B;
+    content: "";
+    height: 12px;
+    left: 20px;
+    pointer-events: none;
+    position: absolute;
+    top: 18px;
+    width: 12px;
+    z-index: 2;
+}
+
+#write pre.md-fences::after {
+    background: var(--my-code-line);
+    content: "";
+    height: 1px;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+}
+
+#write pre.md-fences[lang="mermaid"],
+#write pre.md-fences[lang="sequence"],
+#write pre.md-fences[lang="flow"],
+#write pre.md-fences[lang="chart"],
+#write pre.md-fences[lang="railroad"],
+#write pre.md-fences[lang="plantuml"],
+#write pre.md-fences.md-fences-advanced {
+    padding-top: 20px;
+}
+
+#write pre.md-fences[lang="mermaid"]::before,
+#write pre.md-fences[lang="sequence"]::before,
+#write pre.md-fences[lang="flow"]::before,
+#write pre.md-fences[lang="chart"]::before,
+#write pre.md-fences[lang="railroad"]::before,
+#write pre.md-fences[lang="plantuml"]::before,
+#write pre.md-fences.md-fences-advanced::before,
+#write pre.md-fences[lang="mermaid"]::after,
+#write pre.md-fences[lang="sequence"]::after,
+#write pre.md-fences[lang="flow"]::after,
+#write pre.md-fences[lang="chart"]::after,
+#write pre.md-fences[lang="railroad"]::after,
+#write pre.md-fences[lang="plantuml"]::after,
+#write pre.md-fences.md-fences-advanced::after {
+    display: none;
+}
+
+.cm-s-inner.CodeMirror,
+#write .md-fences .CodeMirror,
+#write .md-fences .CodeMirror-scroll,
+#write .md-fences .CodeMirror-sizer,
+.cm-s-inner .CodeMirror-gutters {
+    background: var(--my-code-bg);
+    color: var(--my-code-text);
+    font-family: var(--my-mono);
+    line-height: 1.45;
+}
+
+#write .md-fences .CodeMirror-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-left: 0;
+}
+
+#write .md-fences .CodeMirror-lines {
+    padding-left: 0.5em;
+}
+
+#write pre.md-fences .code-tooltip,
+#write pre.md-fences .code-tooltip-content {
+    z-index: 10;
+}
+
+/*
+ * Every fence language/toolbar, including mermaid, sequence and flow.
+ * Night's bottom:-2.2em sits on this theme's border. top:100% + 8px
+ * clears the 12px corner without depending on the chip's own height.
+ */
+#write pre.md-fences > .code-tooltip {
+    bottom: auto;
+    box-shadow: none;
+    line-height: 1.4;
+    margin: 0;
+    padding: 3px 10px;
+    position: absolute;
+    right: 14px;
+    top: calc(100% + 8px);
+}
+
+#write .md-fences .CodeMirror-code,
+#write .md-fences .CodeMirror-line,
+#write .md-fences .CodeMirror pre {
+    color: var(--my-code-text);
+    font-family: var(--my-mono);
+    line-height: 1.45;
+}
+
+/* Line-height on inner spans shifts the native selection box off the
+   CodeMirror selection bar. Keep the family, leave the line box alone. */
+#write .md-fences .CodeMirror-line span {
+    font-family: var(--my-mono);
+}
+
+/* Gutter/line numbers: light styling only — no position/display overrides */
+#write .md-fences .CodeMirror-gutters,
+#write .md-fences.md-fences-with-lineno .CodeMirror-gutters {
+    background: var(--my-code-bg);
+    border-right: 0;
+}
+
+#write .md-fences .CodeMirror-linenumber {
+    color: #8F949D;
+    padding: 0 0.45em 0 0.25em;
+    text-align: right;
+}
+
+/*
+ * Active line in code fences:
+ * - default (unfocused): no band
+ * - after click / when CM has focus: highlight current line
+ */
+#write .md-fences .CodeMirror-activeline-background,
+#write .md-fences .CodeMirror-activeline .CodeMirror-linebackground,
+#write pre.md-fences .CodeMirror-activeline-background,
+.cm-s-inner .CodeMirror-activeline-background {
+    background: transparent !important;
+}
+
+#write .md-fences .CodeMirror-focused .CodeMirror-activeline-background,
+#write .md-fences .CodeMirror.CodeMirror-focused .CodeMirror-activeline-background,
+#write pre.md-fences .CodeMirror-focused .CodeMirror-activeline-background,
+.cm-s-inner.CodeMirror-focused .CodeMirror-activeline-background {
+    background: rgba(56, 189, 248, 0.12) !important;
+}
+
+/*
+ * Active-line band stays. Text selection must not paint a second time:
+ * #write *::selection and .CodeMirror-selectedtext both draw their own
+ * cyan, a couple of pixels off the line band, which is the drag smear.
+ * The selection bar itself is colored by --select-text-bg-color.
+ */
+#write .md-fences .CodeMirror-selectedtext {
+    background: transparent !important;
+    color: inherit !important;
+    text-shadow: none !important;
+}
+
+#write .md-fences .CodeMirror-line::selection,
+#write .md-fences .CodeMirror-line > span::selection,
+#write .md-fences .CodeMirror-line > span > span::selection,
+#write .md-fences .CodeMirror-line *::selection {
+    background: transparent !important;
+    /* inherit is ignored on ::selection; currentColor keeps the token color */
+    color: currentColor !important;
+    text-shadow: none !important;
+}
+
+/* The current find/replace match still gets Typora's search highlight. */
+#write .md-fences .cm-search-hit.CodeMirror-selectedtext,
+#typora-source .cm-search-hit.CodeMirror-selectedtext {
+    background: var(--search-select-bg-color) !important;
+    color: #fff !important;
+}
+
+/* --- table / hr / meta / footnotes / math / deflists / details --- */
+#write table {
+    border-collapse: collapse;
+    margin: 0 0 20px;
+    width: 100%;
+}
+
+#write th,
+#write td {
+    border: 1px solid var(--my-line);
+    padding: 8px;
+    text-align: left;
+}
+
+#write th,
+#write thead th {
+    background-color: rgba(56, 189, 248, 0.06);
+    color: var(--my-text);
+    font-weight: 500;
+}
+
+#write tr {
+    background: transparent;
+}
+
+#write tbody tr:nth-child(even) {
+    background: rgba(226, 232, 240, 0.035);
+}
+
+#write tr:hover {
+    background-color: rgba(226, 232, 240, 0.06);
+}
+
+#write hr {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+    );
+    border: 0;
+    height: 1px;
+    /* night paste sets hr { margin: 24px 0 !important } */
+    margin: 32px 0 !important;
+}
+
+#write pre.md-meta-block,
+#write .md-meta-block {
+    background: var(--my-code-bg);
+    border: 1px solid var(--my-line);
+    border-radius: 8px;
+    color: var(--my-muted);
+    font-family: var(--my-mono);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0 0 1.5em;
+    padding: 12px 16px;
+}
+
+#write pre.md-meta-block + h1,
+#write .md-meta-block + h1 {
+    margin-top: 0.5em;
+}
+
+#write .footnotes {
+    border-top: 1px solid var(--my-line);
+    color: var(--my-muted);
+    font-size: 0.92em;
+    margin-top: 2.75em;
+    padding-top: 1em;
+}
+
+#write .footnotes hr {
+    display: none;
+}
+
+#write .footnotes ol {
+    padding-left: 1.4em;
+}
+
+#write .footnotes li {
+    margin: 0.4em 0;
+}
+
+#write .footnotes a.footnote-backref {
+    color: var(--my-link);
+    margin-left: 0.25em;
+    text-decoration: none;
+}
+
+#write .md-math-block,
+#write .md-inline-math {
+    color: var(--my-text);
+}
+
+#write .md-math-block {
+    margin: 1.25em 0;
+    overflow-x: auto;
+}
+
+.md-inline-math svg {
+    color: var(--my-text);
+}
+
+.md-mathjax-midline {
+    background-color: #57616b;
+    border-bottom: none;
+}
+
+#write dl {
+    margin: 0 0 1.25em;
+}
+
+#write dt {
+    color: var(--my-h3);
+    font-weight: 500;
+    margin-top: 0.75em;
+}
+
+#write dd {
+    color: var(--my-muted);
+    margin: 0.25em 0 0.5em 1.25em;
+}
+
+#write details {
+    background: var(--my-soft);
+    border: 1px solid var(--my-line);
+    border-radius: 8px;
+    margin: 0 0 1.25em;
+    padding: 0.6em 1em;
+}
+
+#write details summary {
+    color: var(--my-h1);
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+}
+
+#write details[open] summary {
+    margin-bottom: 0.6em;
+}
+
+#write ::selection,
+#write *::selection {
+    background: rgba(56, 189, 248, 0.35);
+    color: #fff;
+}
+
+/* --- TOC --- */
+/*
+ * [TOC] mirrors the sidebar outline's level colors. Typora sets the block
+ * to .9rem and indents each level by 2em on the inner link, which leaves a
+ * tiny staircase inside an 18px document; the size follows the body instead
+ * and the indent moves into the row's padding. Level color sits on the row
+ * and the link inherits it, so currentColor is the level.
+ * There is deliberately no hover appearance. Typora rebuilds the whole list
+ * on every refresh (its innerHTML comparison never matches; see
+ * DEVELOPMENT.md), and WebKit can stop invalidating :hover until the Typora
+ * window loses and regains key-window status. Any hover appearance would
+ * therefore sometimes stick to the wrong title.
+ * The 2em top margin leaves room for Typora's 30px "Table of Contents"
+ * strip, which it absolutely positions above the block on focus.
+ */
+#write .md-toc {
+    background: var(--my-soft);
+    border: 1px solid var(--my-line);
+    border-radius: 10px;
+    font-size: 0.9em;
+    margin: 2em 0;
+    padding: 0.5em;
+}
+
+#write .md-toc:focus {
+    border-color: rgba(56, 189, 248, 0.35);
+}
+
+/* Typora draws a dashed box around the content on focus; the card border
+   already changes color. */
+#write .md-toc-content,
+#write .md-toc:focus .md-toc-content {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The focus strip: Typora gives it a 1px top line in --border-color, which
+   this theme does not define, so it fell back to a text-colored line that
+   cut through the paragraph above. A quiet label and a small delete button
+   on a transparent strip instead. */
+#write div.md-toc-tooltip {
+    background-color: transparent;
+    border-top: 0;
+    color: var(--my-muted);
+    font-size: 0.8em;
+    font-weight: 500;
+    line-height: 30px;
+    padding: 0 8px;
+}
+
+#write .md-toc .md-delete-toc {
+    border-radius: 6px;
+    color: var(--my-muted);
+    font-size: 1em;
+    line-height: 24px;
+    margin-top: 3px;
+    padding: 0 6px;
+}
+
+#write .md-toc .md-delete-toc:focus {
+    background-color: rgba(56, 189, 248, 0.16);
+    color: #fff;
+}
+
+/* Focus mode paints every link in the focused block link-blue; the TOC rows
+   keep their level colors. */
+.on-focus-mode .md-toc.md-focus a.md-toc-inner {
+    color: inherit !important;
+}
+
+#write .md-toc:empty {
+    display: none;
+}
+
+/* Lines up with the row text and sits centered in the 3.58rem min-height */
+#write .md-toc-content:empty:before {
+    color: var(--my-muted);
+    font-size: 1.2em;
+    left: 1.05em;
+    top: 0.2em;
+}
+
+#write .md-toc-item {
+    line-height: 1.5;
+    margin: 1px 0;
+    padding: 0.12em 0.75em;
+}
+
+/* Typora's base underlines .md-toc-inner on hover. Keep normal and hover
+   visually identical so WebKit's stale :hover state cannot leave a mark. */
+#write .md-toc-item > a.md-toc-inner {
+    color: inherit;
+    display: block;
+    margin-left: 0;
+    text-decoration: none;
+    transition: none;
+}
+
+#write a.md-toc-inner:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+#write .md-toc-item.md-toc-h1 {
+    color: var(--my-h1);
+    font-weight: 700;
+}
+
+#write .md-toc-item.md-toc-h2 {
+    color: var(--my-h2);
+    padding-left: calc(0.75em + 1.25em);
+}
+
+#write .md-toc-item.md-toc-h3 {
+    color: var(--my-h3);
+    padding-left: calc(0.75em + 2.5em);
+}
+
+#write .md-toc-item.md-toc-h4 {
+    color: var(--my-h4);
+    padding-left: calc(0.75em + 3.75em);
+}
+
+#write .md-toc-item.md-toc-h5 {
+    color: var(--my-h5);
+    padding-left: calc(0.75em + 5em);
+}
+
+#write .md-toc-item.md-toc-h6 {
+    color: var(--my-h6);
+    padding-left: calc(0.75em + 6.25em);
+}
+
+/* --- GFM alerts --- */
+#write .md-alert {
+    background: var(--my-soft);
+    border: 1px solid var(--my-line);
+    border-left-width: 4px;
+    border-radius: 0 8px 8px 0;
+    margin: 1em 0 1.25em;
+    padding: 0.75em 1em;
+}
+
+#write .md-alert > p {
+    margin-bottom: 0.5em;
+}
+
+#write .md-alert > p:last-child {
+    margin-bottom: 0;
+}
+
+#write .md-alert.md-alert-note {
+    border-left-color: #38BDF8;
+}
+
+#write .md-alert.md-alert-tip {
+    border-left-color: #34D399;
+}
+
+#write .md-alert.md-alert-important {
+    border-left-color: #A78BFA;
+}
+
+#write .md-alert.md-alert-warning {
+    border-left-color: #FBBF24;
+}
+
+#write .md-alert.md-alert-caution {
+    border-left-color: #FB7185;
+}
+
+.md-alert-text-note {
+    color: #7DD3FC;
+}
+
+.md-alert-text-tip {
+    color: #6EE7B7;
+}
+
+.md-alert-text-important {
+    color: #C4B5FD;
+}
+
+.md-alert-text-warning {
+    color: #FCD34D;
+}
+
+.md-alert-text-caution {
+    color: #FDA4AF;
+}
+
+/* --- diagrams --- */
+#write .md-focus .md-diagram-panel {
+    background: var(--my-code-bg);
+    border: 1px solid var(--my-line);
+    border-radius: 8px;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #FB7185;
+}
+
+/* --- focus mode (single block) --- */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) {
+    opacity: 0.42;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: inherit !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container) > input {
+    opacity: 0.35;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container) {
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code > *:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code > *:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: var(--my-text);
+    opacity: 1;
+}
+
+.on-focus-mode .md-focus h1,
+.on-focus-mode .md-focus h1 .md-plain,
+.on-focus-mode h1.md-focus,
+.on-focus-mode h1.md-focus .md-plain {
+    color: var(--my-h1) !important;
+}
+
+.on-focus-mode .md-focus h2,
+.on-focus-mode .md-focus h2 .md-plain,
+.on-focus-mode h2.md-focus,
+.on-focus-mode h2.md-focus .md-plain {
+    color: var(--my-h2) !important;
+}
+
+.on-focus-mode .md-focus h3,
+.on-focus-mode .md-focus h3 .md-plain,
+.on-focus-mode h3.md-focus,
+.on-focus-mode h3.md-focus .md-plain {
+    color: var(--my-h3) !important;
+}
+
+.on-focus-mode .md-focus a,
+.on-focus-mode .md-focus-container a {
+    color: var(--my-link) !important;
+}
+
+/* --- sidebar / outline / files --- */
+/* The outline mirrors the document's headings and the file tree sits next
+   to it, so the whole sidebar uses the document font. Transient chrome
+   (footer, search, notification, Windows menu page) stays on the system
+   stack. Night sets the family on html/body, so this has to be explicit. */
+#typora-sidebar {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    font-family: var(--my-font);
+}
+
+/* Typora's file list sets Raleway on these; the Windows build already
+   resets them to inherit, the mac build does not. */
+#typora-sidebar .file-list-item-summary,
+#typora-sidebar .file-list-item-parent-loc,
+#typora-sidebar .file-list-item-time {
+    font-family: inherit;
+}
+
+/*
+ * Outline rows are pills with one geometry for rest, hover and active, so
+ * the highlight never jumps or hugs the text. Typora bleeds its hover band
+ * to the sidebar edges with -28px margins and transparent side borders
+ * (night tints those borders); the pill replaces that. Typora's 1em indent
+ * per level moves inside the pill. Pixel line-height keeps the sidebar
+ * steady when the editor font-size preference changes html's rem.
+ */
+#typora-sidebar .outline-content {
+    padding: 8px 10px 16px;
+}
+
+#typora-sidebar .outline-item {
+    border-radius: 6px;
+    line-height: 20px;
+    margin: 1px 0;
+    padding: 5px 10px;
+    transition: background-color 0.15s ease;
+}
+
+/*
+ * Hover is a lighter wash of the same color the active row uses. Typora
+ * moves the active class only after its 500ms scroll animation plus a
+ * 100ms timer, so a click shows this wash at once and deepens into the
+ * active wash when the editor arrives; a neutral grey here read as "the
+ * highlight did not move".
+ */
+#typora-sidebar .outline-item:hover {
+    background-color: rgba(226, 232, 240, 0.07);
+    background-color: color-mix(in srgb, currentColor 8%, transparent);
+    border-left: 0;
+    border-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* The pill is the hover affordance; no underline on the label */
+#typora-sidebar .outline-label:hover {
+    text-decoration: none;
+}
+
+#typora-sidebar .outline-h1 > .outline-item {
+    color: var(--my-h1);
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+#typora-sidebar .outline-h2 > .outline-item {
+    color: var(--my-h2);
+    padding-left: calc(10px + 1em);
+}
+
+#typora-sidebar .outline-h3 > .outline-item {
+    color: var(--my-h3);
+    padding-left: calc(10px + 2em);
+}
+
+#typora-sidebar .outline-h4 > .outline-item {
+    color: var(--my-h4);
+    padding-left: calc(10px + 3em);
+}
+
+#typora-sidebar .outline-h5 > .outline-item {
+    color: var(--my-h5);
+    padding-left: calc(10px + 4em);
+}
+
+#typora-sidebar .outline-h6 > .outline-item {
+    color: var(--my-h6);
+    padding-left: calc(10px + 5em);
+}
+
+/*
+ * Active row: the heading keeps its own color and sits on a wash of that
+ * same color. Typora already bolds the active label. The rgba line is the
+ * fallback where color-mix() is unavailable.
+ */
+#typora-sidebar .outline-item-active,
+#typora-sidebar .outline-item-active:hover {
+    background-color: rgba(56, 189, 248, 0.14);
+    background-color: color-mix(in srgb, currentColor 16%, transparent);
+}
+
+/* Keyboard selection ring hugs the pill instead of floating 2px outside */
+#typora-sidebar .outline-item.select {
+    outline-offset: -1px;
+}
+
+.sidebar-tabs {
+    background: var(--side-bar-bg-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: #eee;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    background-color: var(--bg-color);
+    border: solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+}
+
+.file-list-item {
+    border-bottom: none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+/*
+ * File tree rows use the same pill as the outline. Typora paints the row
+ * through .file-node-background, an absolutely positioned div spanning the
+ * tree, with a 4px bar on the active file. The row is 2px + 22px + 2px, so
+ * the pill matches it exactly and the title sits centered.
+ */
+#typora-sidebar .file-node-content {
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+#typora-sidebar .file-node-background {
+    border-radius: 6px;
+    height: 26px;
+    left: 4px;
+    right: 4px;
+    width: auto;
+}
+
+#typora-sidebar .file-tree-node.active > .file-node-background,
+#typora-sidebar .file-library-node.active > .file-node-background {
+    background-color: rgba(56, 189, 248, 0.14);
+    border-left: 0;
+}
+
+.file-node-content:hover {
+    color: #fff;
+}
+
+.file-list-item:hover {
+    background: rgba(56, 189, 248, 0.08);
+}
+
+.file-list-item.active {
+    background-color: rgba(56, 189, 248, 0.14) !important;
+}
+
+#typora-sidebar .file-tree-node.active > .file-node-content,
+.file-library-node.active > .file-node-content,
+.file-list-item.active {
+    color: #fff !important;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state,
+.html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+.file-node-expanded > .file-node-children {
+    display: grid;
+}
+
+/* --- chrome: footer, search, tooltip, popovers, quick-open --- */
+footer.ty-footer {
+    background: var(--side-bar-bg-color);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--my-muted);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+}
+
+#md-searchpanel {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.md-search-hit {
+    background: rgba(251, 191, 36, 0.45);
+    border-radius: 2px;
+    color: #fff;
+}
+
+.md-search-hit * {
+    color: #fff;
+}
+
+#ty-tooltip {
+    background-color: #1a1f26;
+    border: 1px solid var(--my-line);
+    border-radius: 6px;
+    color: var(--my-text);
+    font-size: 12px;
+}
+
+.popover,
+.md-table-resize-popover,
+.context-menu,
+.dropdown-menu,
+.auto-suggest-container {
+    background: var(--my-chrome);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--my-text);
+}
+
+/* Shared chrome. Border stays off this pair so hover cards and the math
+   bar are not double-framed. The fence language chip adds its own border. */
+div.code-tooltip,
+div.code-tooltip-content {
+    background: var(--my-chrome) !important;
+    color: var(--my-muted);
+}
+
+/* Fence language chip: Typora inserts it as a direct child of the pre,
+   with the lang input inside and no content wrapper. */
+#write pre.md-fences > .code-tooltip {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+/* Hover cards and the inline math preview: border on the content layer,
+   arrow in the same chrome color. */
+.md-hover-tip.code-tooltip,
+#math-inline-preview.code-tooltip {
+    border: 0;
+    border-radius: 4px;
+}
+
+.md-hover-tip .code-tooltip-content,
+#math-inline-preview .code-tooltip-content {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.md-hover-tip .md-arrow:after,
+#math-inline-preview .md-arrow:after {
+    background: var(--my-chrome) !important;
+}
+
+/* Math block toolbar sits inside the block; no card chrome. */
+.md-math-block .code-tooltip,
+.md-math-block .code-tooltip-content,
+.md-mathblock-panel .code-tooltip {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#typora-quick-open {
+    background: var(--side-bar-bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+#typora-quick-open input {
+    background: transparent;
+    color: var(--my-text);
+}
+
+.typora-quick-open-item {
+    color: var(--my-muted);
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: rgba(56, 189, 248, 0.15) !important;
+    color: #fff !important;
+}
+
+/*
+ * Notification row ("导出成功", errors). Typora centers a 1200px strip over
+ * the whole window, so with the sidebar pinned it starts mid-sidebar (node
+ * builds offset it, mac does not), and its shadow sits on the transparent
+ * full-width container. Keep it a plain row under the title bar: the
+ * editor's own background, a hairline below, spanning the editor area. No
+ * card, no shadow (a shadow here falls on the first block of the document).
+ * Heights stay at Typora's 44px so the editor offset still clears it.
+ */
+.pin-outline .md-notification-container {
+    left: var(--sidebar-width);
+}
+
+.md-notification-container {
+    box-shadow: none;
+}
+
+/* Seamless title bar: Typora pads the row itself, which leaves the bell
+   above the text. Pad the container instead; the row stays one line. */
+.mac-seamless-mode .md-notification-container {
+    padding-top: var(--title-bar-height, 24px);
+}
+
+.mac-seamless-mode #md-notification {
+    padding-top: 0;
+}
+
+.native-window #md-notification,
+#md-notification {
+    background: var(--bg-color);
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--my-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+    /*
+     * The bell and the close button are absolutely positioned, but Typora
+     * leaves the row static, so they anchor to the fixed container and drift
+     * whenever the container is padded. Anchor them to the row; the base
+     * top/left/right offsets must then be zeroed or they would shift it.
+     */
+    left: 0;
+    max-width: none;
+    position: relative;
+    right: 0;
+    top: 0;
+}
+
+.mac-seamless-mode #md-notification .ty-icon-close-btn {
+    top: calc(50% - 10px);
+}
+
+#md-notification:before {
+    color: var(--my-h1);
+    left: 18px;
+    top: 14px;
+}
+
+#md-notification p {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 11px auto;
+    padding-left: 44px;
+}
+
+#md-notification .md-notification-content {
+    padding-right: 10px;
+}
+
+#md-notification .btn {
+    background: rgba(226, 232, 240, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    color: var(--my-text);
+    font-size: 12px;
+    line-height: 18px;
+    margin: 8px 4px;
+    padding: 3px 10px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+#md-notification .btn:hover,
+#md-notification .btn:focus,
+#md-notification .btn-default:hover,
+#md-notification .btn-default:focus {
+    background: rgba(56, 189, 248, 0.16);
+    border: 1px solid rgba(56, 189, 248, 0.45);
+    color: #fff;
+}
+
+/* The title+detail variant closes with an absolutely placed .close-btn */
+#md-notification .close-btn {
+    border-color: rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    color: var(--my-muted);
+}
+
+#md-notification .close-btn:hover {
+    border-color: rgba(56, 189, 248, 0.45);
+    color: #fff;
+}
+
+/*
+ * Windows / Linux file menu (the page behind the ≡ button: 新建 / 打开 /
+ * 主题 / 偏好设置 …). macOS uses native menus, so none of this renders there.
+ * The menu list is a ul.dropdown-menu, so the shared dropdown chrome above
+ * would turn it into a bordered card that stops after the last item; reset
+ * it and style the column like the editor sidebar (same background, same
+ * pill rows, same hover / active washes).
+ */
+.megamenu-menu,
+.megamenu-content {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+}
+
+.megamenu-menu {
+    background-color: var(--side-bar-bg-color);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+    color: var(--my-text);
+}
+
+.megamenu-menu-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#megamenu-menu-header-title {
+    color: var(--my-text);
+}
+
+#megamenu-back-btn {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    color: var(--my-muted);
+    padding: 0;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.megamenu-menu-header:hover #megamenu-back-btn,
+#megamenu-back-btn:hover,
+#megamenu-back-btn:focus {
+    background-color: rgba(56, 189, 248, 0.16);
+    border-color: rgba(56, 189, 248, 0.45);
+    color: #fff;
+}
+
+.megamenu-menu .megamenu-menu-list,
+.megamenu-menu-list.dropdown-menu {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: inherit;
+    padding: 8px 0;
+}
+
+.megamenu-menu-list li a {
+    border-radius: 6px;
+    height: 40px;
+    line-height: 40px;
+    margin: 1px 10px;
+    padding-left: 22px;
+    padding-right: 14px;
+    transition: background-color 0.15s ease;
+}
+
+/* Below 586px Typora means to hide the header title but its own
+   .megamenu-menu-header #megamenu-menu-header-title { display: block }
+   outranks the media rule, leaving an 18px overflow and a horizontal
+   scrollbar in the column. */
+@media (max-width: 586px) {
+    .megamenu-menu-header #megamenu-menu-header-title {
+        display: none;
+    }
+}
+
+/* Below 530px Typora collapses the menu to centered icons. */
+@media (max-width: 530px) {
+    .megamenu-menu-list li a {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.megamenu-menu .megamenu-menu-list:not(.saved) li a:hover {
+    background-color: rgba(226, 232, 240, 0.07);
+    background-color: color-mix(in srgb, currentColor 8%, transparent);
+    color: #fff;
+}
+
+.megamenu-menu .megamenu-menu-list li a.active,
+.megamenu-menu .megamenu-menu-list li a.active:hover {
+    background-color: rgba(56, 189, 248, 0.14);
+    color: #fff;
+}
+
+/* Content panel: wide buttons, theme cards, recent-files table. */
+.megamenu-content .long-btn {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.megamenu-content .long-btn:hover {
+    background-color: rgba(56, 189, 248, 0.16);
+    border-color: rgba(56, 189, 248, 0.45);
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    color: var(--my-text);
+}
+
+/* Typora flashes these white (#EEE / #000) on hover. */
+.megamenu-menu-panel .btn:hover,
+.megamenu-menu-panel .btn:focus {
+    background-color: rgba(56, 189, 248, 0.16);
+    border-color: rgba(56, 189, 248, 0.45);
+    color: #fff;
+}
+
+.megamenu-menu-panel input[type="text"] {
+    border-bottom-color: rgba(255, 255, 255, 0.18);
+    color: var(--my-text);
+}
+
+/* Dropdowns inside the panel are white in Typora's base; night painted the
+   items dark instead. Paint the menu itself so padding does not show. */
+.megamenu-menu-panel .dropdown-menu,
+#recent-file-pane .dropdown-menu {
+    background-color: var(--my-chrome);
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    background-color: transparent;
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a:hover,
+.megamenu-menu-panel .dropdown-menu > li > a:focus {
+    background-color: var(--item-hover-bg-color);
+    color: #fff;
+}
+
+/* Theme cards. Typora's --side-bar-menu-active-tint is never defined, so
+   the active border and check mark fall back to the text color. */
+.theme-preview-div {
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--primary-color);
+}
+
+.theme-preview-div:hover {
+    border-color: rgba(56, 189, 248, 0.45);
+}
+
+.theme-preview-div.active,
+.theme-preview-div.active:hover {
+    border-color: var(--primary-color);
+}
+
+.theme-preview-div .fa {
+    color: var(--primary-color);
+}
+
+/* Windows title bar buttons flash white (#EDEDED / #000) on hover in
+   Typora's base; close keeps Typora's red. */
+#top-titlebar .toolbar-icon.btn.hover,
+#top-titlebar .toolbar-icon.btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+#w-max-group #w-full,
+#w-max-group #w-pin {
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* 1px window frame Typora paints when the window is not maximized. */
+.paint-border content,
+.paint-border header,
+.paint-border .megamenu-content {
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Disabled paragraph-style buttons in the Windows context menu: Typora's
+   #fafafa / #777 rule is outranked by its own .menu-item-container rule, so
+   they end up looking enabled. Dim them instead. */
+.menu-style-btn.disabled,
+.menu-style-btn.disabled:hover {
+    opacity: 0.45;
+}
+
+/* Floating selection toolbar (both platforms): same chrome as popovers. */
+.ty-editor-toolbar,
+.ty-editor-toolbar-menu {
+    background-color: var(--my-chrome);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--my-text);
+}
+
+.ty-editor-toolbar {
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+}
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+
+.ty-preferences .btn-default:hover {
+    background: #57616b;
+}
+
+.ty-preferences select {
+    border: 1px solid #989698;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    background: #333;
+    border-color: #333;
+    border-radius: 6px;
+    color: white;
+    line-height: 22px;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+.nav-group-item:active {
+    background-color: #474d54 !important;
+}
+
+.modal-backdrop.in {
+    backdrop-filter: blur(1px);
+    opacity: 1;
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+html.is-blur #write {
+    opacity: 0.96;
+}
+
+/* --- scrollbars (single) --- */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.28);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+    background: rgba(56, 189, 248, 0.45);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(148, 163, 184, 0.28);
+}
+
+/* --- HTML / PDF export --- */
+/* Same font stack as editor — do not invent a second stack for export */
+.typora-export,
+.typora-export-content {
+    background: var(--bg-color);
+    color: var(--my-text);
+    font-family: var(--my-font);
+}
+
+.typora-export #write {
+    font-family: var(--my-font);
+    max-width: 64rem;
+    padding: 2rem 1.5rem 4rem;
+}
+
+/* Code same as body (文楷); explicit for export HTML path */
+.typora-export #write code,
+.typora-export #write .md-fences,
+.typora-export #write .CodeMirror,
+.typora-export #write .CodeMirror-line,
+.typora-export #write .CodeMirror-line span,
+.typora-export #write kbd {
+    font-family: var(--my-font);
+}
+
+/*
+ * Export/print: keep the same chrome as editor (traffic lights + divider).
+ * Do NOT force CM gutter position/display — that breaks line numbers.
+ * Do NOT hide ::before/::after — that removes the red-circled header bar.
+ */
+.typora-export pre.md-fences,
+.typora-export #write pre.md-fences {
+    /* same padding as editor: room for dots + separator */
+    box-shadow: rgba(0, 0, 0, 0.18) 0 10px 28px 0;
+    /* no language chip in export, so no room reserved for it */
+    margin-bottom: 1.6rem;
+    overflow: visible;
+    padding: 64px 18px 20px 0 !important;
+    position: relative;
+}
+
+/* Ensure traffic-light header is painted in export (same as #write rules) */
+.typora-export pre.md-fences::before,
+.typora-export #write pre.md-fences::before {
+    background: #EF6A74 !important;
+    border-radius: 50% !important;
+    box-shadow: 20px 0 #FDBC40, 40px 0 #35CD4B !important;
+    content: "" !important;
+    display: block !important;
+    height: 12px !important;
+    left: 20px !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: 18px !important;
+    width: 12px !important;
+    z-index: 2 !important;
+}
+
+.typora-export pre.md-fences::after,
+.typora-export #write pre.md-fences::after {
+    background: var(--my-code-line) !important;
+    content: "" !important;
+    display: block !important;
+    height: 1px !important;
+    left: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 45px !important;
+}
+
+/* Diagram fences: still no fake traffic lights */
+.typora-export pre.md-fences[lang="mermaid"]::before,
+.typora-export pre.md-fences[lang="sequence"]::before,
+.typora-export pre.md-fences[lang="flow"]::before,
+.typora-export pre.md-fences[lang="chart"]::before,
+.typora-export pre.md-fences[lang="railroad"]::before,
+.typora-export pre.md-fences[lang="plantuml"]::before,
+.typora-export pre.md-fences.md-fences-advanced::before,
+.typora-export pre.md-fences[lang="mermaid"]::after,
+.typora-export pre.md-fences[lang="sequence"]::after,
+.typora-export pre.md-fences[lang="flow"]::after,
+.typora-export pre.md-fences[lang="chart"]::after,
+.typora-export pre.md-fences[lang="railroad"]::after,
+.typora-export pre.md-fences[lang="plantuml"]::after,
+.typora-export pre.md-fences.md-fences-advanced::after {
+    display: none !important;
+}
+
+.typora-export pre.md-fences[lang="mermaid"],
+.typora-export pre.md-fences[lang="sequence"],
+.typora-export pre.md-fences[lang="flow"],
+.typora-export pre.md-fences[lang="chart"],
+.typora-export pre.md-fences[lang="railroad"],
+.typora-export pre.md-fences[lang="plantuml"],
+.typora-export pre.md-fences.md-fences-advanced {
+    padding-top: 20px !important;
+}
+
+.typora-export .md-fences .CodeMirror-activeline-background {
+    background: transparent !important;
+}
+
+.typora-export .md-fences .CodeMirror-linenumber {
+    color: #8F949D !important;
+}
+
+/* --- print / PDF (single block) --- */
+@media print {
+    /*
+     * PDF uses this block. Keep fonts/colors aligned with editor.
+     * -webkit-print-color-adjust: keep heading/TOC/code/dots colors.
+     */
+    #write,
+    #write * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #write {
+        font-family: var(--my-font);
+        padding-bottom: 0;
+    }
+
+    #write code,
+    #write .md-fences,
+    #write .CodeMirror,
+    #write .CodeMirror-line,
+    #write .CodeMirror-line span,
+    #write kbd {
+        font-family: var(--my-font) !important;
+    }
+
+    /* Body links only — exclude TOC so H1–H6 palette survives */
+    #write a:not(.md-toc-inner):not(.md-footnote) {
+        background-image: none !important;
+        border-radius: 0;
+        color: var(--my-link) !important;
+        text-decoration: underline;
+    }
+
+    #write .md-toc a,
+    #write .md-toc-item a,
+    #write a.md-toc-inner,
+    #write sup.md-footnote,
+    #write sup.md-footnote a,
+    #write a.md-footnote,
+    #write .footnotes a {
+        background-image: none !important;
+        text-decoration: none !important;
+    }
+
+    #write a:has(> img),
+    #write a:has(> .md-image) {
+        background-image: none !important;
+        text-decoration: none !important;
+    }
+
+    /* Headings — re-assert palette (print can wash colors) */
+    #write h1,
+    #write h1 .md-plain,
+    #write .md-heading-1 .md-plain {
+        color: var(--my-h1) !important;
+    }
+
+    #write h2,
+    #write h2 .md-plain,
+    #write .md-heading-2 .md-plain {
+        color: var(--my-h2) !important;
+    }
+
+    #write h3,
+    #write h3 .md-plain,
+    #write .md-heading-3 .md-plain {
+        color: var(--my-h3) !important;
+    }
+
+    #write h4,
+    #write h4 .md-plain,
+    #write .md-heading-4 .md-plain {
+        color: var(--my-h4) !important;
+    }
+
+    #write h5,
+    #write h5 .md-plain,
+    #write .md-heading-5 .md-plain {
+        color: var(--my-h5) !important;
+    }
+
+    #write h6,
+    #write h6 .md-plain,
+    #write .md-heading-6 .md-plain {
+        color: var(--my-h6) !important;
+    }
+
+    #write strong,
+    #write strong *,
+    #write b,
+    #write b * {
+        color: var(--my-strong) !important;
+    }
+
+    /* TOC hierarchy colors */
+    #write .md-toc-h1 > a.md-toc-inner,
+    #write .md-toc-h1 > a.md-toc-inner * {
+        color: var(--my-h1) !important;
+    }
+
+    #write .md-toc-h2 > a.md-toc-inner,
+    #write .md-toc-h2 > a.md-toc-inner * {
+        color: var(--my-h2) !important;
+    }
+
+    #write .md-toc-h3 > a.md-toc-inner,
+    #write .md-toc-h3 > a.md-toc-inner * {
+        color: var(--my-h3) !important;
+    }
+
+    #write .md-toc-h4 > a.md-toc-inner,
+    #write .md-toc-h4 > a.md-toc-inner * {
+        color: var(--my-h4) !important;
+    }
+
+    #write .md-toc-h5 > a.md-toc-inner,
+    #write .md-toc-h5 > a.md-toc-inner * {
+        color: var(--my-h5) !important;
+    }
+
+    #write .md-toc-h6 > a.md-toc-inner,
+    #write .md-toc-h6 > a.md-toc-inner * {
+        color: var(--my-h6) !important;
+    }
+
+    /* Keep traffic lights + divider in PDF, same as editor */
+    #write pre.md-fences {
+        break-inside: avoid;
+        /* no language chip in print, so no room reserved for it */
+        margin-bottom: 1.6rem;
+        overflow: visible;
+        padding: 64px 18px 20px 0 !important;
+        position: relative;
+    }
+
+    #write pre.md-fences::before {
+        background: #EF6A74 !important;
+        border-radius: 50% !important;
+        box-shadow: 20px 0 #FDBC40, 40px 0 #35CD4B !important;
+        content: "" !important;
+        display: block !important;
+        height: 12px !important;
+        left: 20px !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        top: 18px !important;
+        width: 12px !important;
+        z-index: 2 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #write pre.md-fences::after {
+        background: var(--my-code-line) !important;
+        content: "" !important;
+        display: block !important;
+        height: 1px !important;
+        left: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: 45px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #write pre.md-fences[lang="mermaid"]::before,
+    #write pre.md-fences[lang="sequence"]::before,
+    #write pre.md-fences[lang="flow"]::before,
+    #write pre.md-fences[lang="chart"]::before,
+    #write pre.md-fences[lang="railroad"]::before,
+    #write pre.md-fences[lang="plantuml"]::before,
+    #write pre.md-fences.md-fences-advanced::before,
+    #write pre.md-fences[lang="mermaid"]::after,
+    #write pre.md-fences[lang="sequence"]::after,
+    #write pre.md-fences[lang="flow"]::after,
+    #write pre.md-fences[lang="chart"]::after,
+    #write pre.md-fences[lang="railroad"]::after,
+    #write pre.md-fences[lang="plantuml"]::after,
+    #write pre.md-fences.md-fences-advanced::after {
+        display: none !important;
+    }
+
+    #write pre.md-fences[lang="mermaid"],
+    #write pre.md-fences[lang="sequence"],
+    #write pre.md-fences[lang="flow"],
+    #write pre.md-fences[lang="chart"],
+    #write pre.md-fences[lang="railroad"],
+    #write pre.md-fences[lang="plantuml"],
+    #write pre.md-fences.md-fences-advanced {
+        padding-top: 20px !important;
+    }
+
+    #write .md-fences .CodeMirror-activeline-background {
+        background: transparent !important;
+    }
+
+    #write .md-fences .CodeMirror-linenumber {
+        color: #8F949D !important;
+    }
+
+    #write pre.md-fences,
+    #write .md-fences .CodeMirror-linenumber,
+    #write .md-fences {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    #write .md-toc {
+        background: transparent;
+        border-color: var(--my-line);
+        box-shadow: none;
+    }
+
+    #write .md-alert,
+    #write details,
+    #write blockquote {
+        background: transparent !important;
+    }
+
+    #write img {
+        border-color: rgba(0, 0, 0, 0.15);
+        break-inside: avoid;
+    }
+
+    #write h1,
+    #write h2,
+    #write h3,
+    #write h4,
+    #write h5,
+    #write h6 {
+        break-after: avoid;
+    }
+
+    .CodeMirror-selectedtext,
+    .CodeMirror-selected,
+    #write ::selection {
+        background: transparent !important;
+        color: inherit !important;
+    }
+
+    #typora-sidebar,
+    footer.ty-footer,
+    #md-searchpanel,
+    .md-toc .btn {
+        display: none !important;
+    }
+}
