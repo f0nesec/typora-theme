@@ -82,9 +82,7 @@ my-theme/
   mermaid.dark.css          Mermaid 配色
   fonts/                    霞鹜文楷 Light / Regular / Medium（woff2）与 OFL.txt
 示例文章.md                 介绍稿，所有样式的成稿
-DEVELOPMENT.md              开发文档：分层、设计原则、Typora 内部事实、验证方法、开发历程
 assets/                     README 封面、示例文里的色板
-demo/                       官方 night 原始文件，仅对照
 ```
 
 ## 兼容性
