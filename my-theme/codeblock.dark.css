@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/* CSS Document — code fence highlight for my-theme */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #CBD5E1;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C4A1FF;
+}
+
+.cm-s-inner .cm-tag {
+    color: #6EE7B7;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #A5B4FC;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 2px solid #63DCE4;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #F9A8A8;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #94A3B8;
+    font-style: italic;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #7DD3FC;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #34D399;
+}
+
+.cm-s-inner .cm-hr {
+    color: #64748B;
+}
+
+.cm-s-inner .cm-link {
+    color: #63DCE4;
+}
+
+.cm-s-inner .cm-negative {
+    color: #FB7185;
+}
+
+.cm-s-inner .cm-positive {
+    color: #34D399;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #FDBA74;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #94A3B8;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #E9D5FF;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #94A3B8;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #7DD3FC;
+}
+
+.cm-s-inner .cm-number {
+    color: #34D399;
+}
+
+.cm-s-inner .cm-variable {
+    color: #E2E8F0;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #93C5FD;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #6EE7B7;
+}
+
+.cm-s-inner .cm-type {
+    color: #FCD34D;
+}
+
+.cm-s-inner .cm-error {
+    color: #FDA4AF;
+    background: rgba(251, 113, 133, 0.12);
+}
+
+/*
+ * One selection layer only.
+ * Painting .CodeMirror-selected (the bar) and .CodeMirror-selectedtext
+ * (the glyphs) together, on top of the active-line band, offsets by a
+ * pixel or two and reads as a drag smear. The bar stays and takes its
+ * color from --select-text-bg-color (Typora base, !important); the glyph
+ * background does not.
+ */
+.cm-s-inner .CodeMirror-selectedtext {
+    background: transparent !important;
+    color: inherit !important;
+    text-shadow: none !important;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::selection {
+    background: transparent !important;
+    color: currentColor !important;
+    text-shadow: none !important;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    color: #FBBF24 !important;
+    outline: 1px solid rgba(251, 191, 36, 0.45);
+}

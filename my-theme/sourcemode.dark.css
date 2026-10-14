@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/* CSS Document — source mode for my-theme */
+
+/** markdown source **/
+
+.CodeMirror.cm-s-typora-default {
+    font-family: "LXGW WenKai", "PingFang SC", "Microsoft YaHei",
+        "SF Mono", Menlo, Monaco, Consolas, monospace;
+    /* same rule as #write: slant WenKai for italics, never fake bold */
+    font-synthesis: style;
+    line-height: 1.65;
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+    color: #7DD3FC;
+    font-weight: 700;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    border-left: 2px solid #63DCE4;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #94A3B8;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #34D399;
+}
+
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+    color: #FBBF24;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #63DCE4;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(56, 189, 248, 0.08);
+}
+
+.cm-s-typora-default .cm-comment,
+.cm-s-typora-default .cm-code {
+    color: #A78BFA;
+}
+
+.cm-s-typora-default .cm-tag {
+    color: #FB7185;
+}
+
+.cm-s-typora-default .cm-attribute {
+    color: #FBBF24;
+}
+
+.cm-s-typora-default .cm-em {
+    color: #B7C5D6;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-strong {
+    color: #FF7BAD;
+    font-weight: 700;
+}
+
+.cm-s-typora-default .cm-del {
+    color: #94A3B8;
+    text-decoration: line-through;
+}
+
+.cm-s-typora-default .cm-url {
+    color: #4FB3FF;
+}
+
+.cm-s-typora-default .cm-formatting {
+    color: #64748B;
+}
+
+/* Same rule as fences: one selection bar, colored by
+   --select-text-bg-color. A second background on the glyphs, plus the
+   night ::selection color, is the source-mode smear. */
+.cm-s-typora-default .CodeMirror-selectedtext {
+    background: transparent !important;
+    color: inherit !important;
+    text-shadow: none !important;
+}
+
+.cm-s-typora-default .CodeMirror-line::selection,
+.cm-s-typora-default .CodeMirror-line > span::selection,
+.cm-s-typora-default .CodeMirror-line > span > span::selection,
+#typora-source .CodeMirror-line::selection,
+#typora-source .CodeMirror-line *::selection {
+    background: transparent !important;
+    color: currentColor !important;
+    text-shadow: none !important;
+}

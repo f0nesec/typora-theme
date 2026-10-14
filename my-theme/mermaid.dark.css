@@ -1,0 +1,33 @@
+:root {
+  /* Typora built-in mermaid preset; keep "night" for compatibility */
+  --mermaid-theme: night;
+}
+
+/* Mermaid labels/text on dark canvas */
+#write .md-diagram-panel .label,
+#write pre.md-fences[lang="mermaid"] .label,
+[lang="mermaid"] .label,
+.md-diagram-panel text,
+.md-diagram-panel .nodeLabel,
+.md-diagram-panel .edgeLabel {
+  color: #E2E8F0 !important;
+  fill: #E2E8F0 !important;
+  font-family: "LXGW WenKai", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.md-diagram-panel .cluster rect {
+  fill: rgba(48, 55, 65, 0.85) !important;
+  stroke: rgba(148, 163, 184, 0.35) !important;
+}
+
+.md-diagram-panel .node rect,
+.md-diagram-panel .node circle,
+.md-diagram-panel .node ellipse,
+.md-diagram-panel .node polygon {
+  stroke: rgba(56, 189, 248, 0.55) !important;
+}
+
+.md-diagram-panel .edgePath .path,
+.md-diagram-panel .flowchart-link {
+  stroke: rgba(148, 163, 184, 0.65) !important;
+}
